@@ -199,9 +199,22 @@ Use the getAverageWordLength function below to do the following:
 
 function getAverageWordLength(originalFlavors){
     
-}
+  //total elements
+  let totalElements = originalFlavors.length;
 
+  //total words 
+  let totalAmount = 0;
 
+  for (let i = 0; i < totalElements; i++){
+      let words = originalFlavors[i].split(" ");
+      let totalWords = words.length;
+      totalAmount += totalWords;
+  }
+  
+  //averageWords
+  let averageWords = totalAmount / totalElements;
+  return averageWords;
+  }
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
 Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors 
 from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors and store it in an array called randomFlavors.
@@ -215,21 +228,9 @@ Use the getRandomFlavors function and new arrays below to do the following:
 */
 
 
-function getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors)
-{
-  const randomFlavors = [];
-
-    randomFlavors.push(originalFlavors[3]);
-    randomFlavors.push(newFlavors[1]);
-    randomFlavors.push(seasonalFlavors[5]);
-    randomFlavors.push(regionalFlavors[6]);
-
-  return randomFlavors;
-
-}
-console.log('STRETCH 2',  getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors));
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
+
 const newFlavors = [
     "Date night",
     "U.S.S Butterscotch (Stranger Things special)",
@@ -309,6 +310,19 @@ const regionalFlavors = [
     "Chocolate Chocolate Chip Cheesecake",
     "Caramel 'n' Cookies"
 ]
+function getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors)
+{
+  const randomFlavors = [];
+
+    randomFlavors.push(originalFlavors[3]);
+    randomFlavors.push(newFlavors[1]);
+    randomFlavors.push(seasonalFlavors[5]);
+    randomFlavors.push(regionalFlavors[6]);
+
+  return randomFlavors;
+
+}
+console.log('STRETCH 2',  getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors));
 
 
 
@@ -329,4 +343,3 @@ export default{
     getAverageWordLength,
     getRandomFlavors
 }
-
